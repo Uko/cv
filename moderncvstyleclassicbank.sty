@@ -183,11 +183,12 @@
       \framebox{\includegraphics[width=\@photowidth]{\@photo}}}}%
   % name and title
   \newlength{\makecvtitledetailswidth}\settowidth{\makecvtitledetailswidth}{\usebox{\makecvtitledetailsbox}}%
+  \newlength{\makecvtitledetailsheight}\settoheight{\makecvtitledetailsheight}{\usebox{\makecvtitledetailsbox}}%
   \newlength{\makecvtitlepicturewidth}\settowidth{\makecvtitlepicturewidth}{\usebox{\makecvtitlepicturebox}}%
   \ifthenelse{\lengthtest{\makecvtitlenamewidth=0pt}}% check for dummy value (equivalent to \ifdim\makecvtitlenamewidth=0pt)
     {\setlength{\makecvtitlenamewidth}{\textwidth-\makecvtitledetailswidth-\makecvtitlepicturewidth}}%
     {}%
-  \begin{minipage}[b]{\makecvtitlenamewidth}%
+  \begin{minipage}[b][\makecvtitledetailsheight][t]{\makecvtitlenamewidth}%
     \namestyle{\@firstname\ \@lastname}%
     \ifthenelse{\equal{\@title}{}}{}{\\[1.25em]\titlestyle{\@title}}%
   \end{minipage}%
