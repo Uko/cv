@@ -1,0 +1,1 @@
+Again new CV. Now more mine…

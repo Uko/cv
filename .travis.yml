@@ -1,0 +1,14 @@
+env:
+  global:
+    - secure: "gLyurX3u1j/gLmYigPy0012QB8Ikp4tq1nPZqNZkSrQLTBmtnygZDvrjssMlyZnR4KmuNQnnMr5rIpOuqD0t77j24U505OEKhOvs3Z0+lBMa8UjqyJbLML8UKdPQHJdRMvd2RJzidg/5KjZ/Nu83/b27QZsZ83Cg4B+MTTFkcJs="
+
+install:
+  - git clone https://github.com/scottkosty/install-tl-ubuntu.git
+  - cd install-tl-ubuntu
+  - sudo ./install-tl-ubuntu
+  - cd ..
+  - export PATH=$PATH:/usr/local/texlive/2014/bin/x86_64-linux
+
+script: make
+
+after_success: .utility/update-gh-pages.sh
