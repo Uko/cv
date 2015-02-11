@@ -1,39 +1,24 @@
 %!BIB TS-program = biber
 
-%% start of file `template.tex'.
-%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License version 1.3c,
-% available at http://www.latex-project.org/lppl/.
 
+\documentclass[11pt,a4paper,sans]{moderncv} 
 
-\documentclass[11pt,a4paper,sans]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+\moderncvstyle{classicbank}
+\moderncvcolor{maroon}
 
-% moderncv themes
-\moderncvstyle{classicbank}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
-\moderncvcolor{maroon}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
-%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
-\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+\nopagenumbers{}      
+\usepackage[utf8]{inputenc}
 
-% character encoding
-\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
-
-% adjust the page margins
 \usepackage[scale=0.75]{geometry}
-%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
-%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
 
-% personal data
 \name{Yuriy}{Tymchuk}
-%\title{Ph.D. Student}                               % optional, remove / comment the line if not wanted
+\title{Doctoral Assistant}                               % optional, remove / comment the line if not wanted
 \address{Universit\`a della Svizzera Italiana}{Via G. Buffi 13}{6904 Lugano, Switzerland}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 \phone[fixed]{+41~(0)58~666~4293}                    % optional, remove / comment the line if not wanted
 \email{yuriy.tymchuk@usi.ch}                               % optional, remove / comment the line if not wanted
 \homepage{yuriy.tymchuk.me}                         % optional, remove / comment the line if not wanted
 %\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-\photo[74pt][0pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\photo[74pt][0pt]{picture_round}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 %\quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
 \usepackage{csquotes}
@@ -99,79 +84,60 @@
     \printbibliography[title={#1}, filter={#2}, heading=subbibliography]
   \end{refsection}
 }
+\quote{I'm a software engineer / computer scientist who just loves innovation, software development methodologies, teamwork and open source.\\
+I cannot affiliate myself with any programing language in particular as I believe that writing a program is an art of shaping a software system, and programming languages are just the tools.
+However at the moment I believe that the best tool is Pharo/Smalltalk.\\
+I like to lead, I like to make experiments, I hate when people are treated as resources.}
 
 
 
-% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
-%\makeatletter
-%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
-%\makeatother
-%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
 
-% bibliography with mutiple entries
-%\usepackage{multibib}
-%\newcites{book,misc}{{Books},{Others}}
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
+
 \begin{document}
-%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
-%-----       resume       ---------------------------------------------------------
+
 \makecvtitle
 
-\vspace{-1cm}
+\section{Experience}
+\cventry{Oct 2013--Present}{Doctoral Assistant}{Universit\`a della Svizzera Italiana}{}{}{
+Modeling of software developers collaboration, based on the data mined from software repository.\\
+Research on code quality assessment and code review, development of \href{http://vidi.inf.usi.ch}{ViDI} project. }
+\cventry{Apr 2013--Sep 2013}{Software engineer}{\href{http://www.cmdigital.no}{City Media Digital AS}}{}{}{
+Pre-project research concerning web-application for \href{http://www.leanbusiness.no/en/}{leanbusiness.no}.\\
+Development of \href{http://relink.no}{Relink} project. Most of work was related to ruby on rails project, although javascript, html and so on parts were touched too. Contributed to git/CI workflow of the team.}
+\cventry{Jan 2013--Apr 2013}{Intern}{\href{http://rmod.lille.inria.fr/web/}{RMoD}, \href{https://www.inria.fr}{Inria}}{}{}{
+Research on AST metamodels. Development of FAST generic metamodel and symbol resolution algorithm.}
+\cventry{Aug 2012--Jan 2013}{Software engineer}{\href{http://interlogic.com.ua}{InterLogic}}{}{}{
+Development of a Java3D applet for ventilation system configuration, with a backend in PHP and MySQL.}
+\cventry{Mar 2010--Aug 2012}{Founder/Leader}{Unikernel Team \textnormal{\emph{(freelance)}}}{}{}{Different websites made from scratch. Usually online shops, sometimes web apps with rich frontend.}
+\cventry{Feb 2009--Jul 2012}{System Administrator}{\href{http://www.uar.net/en/}{Ukrainian Academic Research Network}}{}{}{Administration of the network, minor web development.}
 
-\section{Personal Information}
-\cvdoubleitem{Date of Birth}{Aug 11, 1991}{Citizenship}{Ukrainian}
-\cvdoubleitem{Place of Birth}{Lviv, Ukraine}{Marital Status}{Maried}
+\section{Skils}
+\cvitem{Experienced}{Pharo/Smalltalk, Ruby+Rails, Java, Agile, git, TDD}
+\cvitem{Familiar}{HTML, CSS, JavaScript, Scala, Objective-C, Python, C++, Lisp, MySQL, MongoDB, Mercurial, SVN}
 
 \section{Education}
-\cventry{2013--Present}{Universit\`a della Svizzera Italiana}{Ph.D. in Informatics}{}{}{Advisor: Prof. Dr. Michele Lanza}
 \cventry{2012--2013}{Ivan Franko National University of Lviv}{Master of Science}{}{}{Specialization in Informatics}
 \cventry{2008--2012}{Ivan Franko National University of Lviv}{Bachelor of Science}{}{}{Specialization in Informatics}
 \cventry{2006--2008}{Lviv Physics and Mathematics Lyceum}{Highschool diploma}{}{}{Specialization in Physics and Mathematics}
 \cventry{2006--2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{}{}{``Whimsical Bride'' - the graduation research project about statistics theory}
 
 
-\section{Publications}
-% Publications from a BibTeX file without multibib
-%  for numerical labels: \renewcommand{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}% CONSIDER MERGING WITH PREAMBLE PART
-%  to redefine the heading string ("Publications"): \renewcommand{\refname}{Articles}
-\nocite{*}
-%\bibliographystyle{plain}
-\printbibsection{conferences}{conferences}
-\printbibsection{formal demonstrations}{demo}
-\printbibsection{workshops}{workshops}
-\printbibsection{theses}{theses}
-%\bibliography{publications}                        % 'publications' is the name of a BibTeX file
+\section{Selected Publications}
+\nocite{Tymc2015a, Tymc2014a, benevol13}
+\printbibliography[heading=none]                       % 'publications' is the name of a BibTeX file
 
-% Publications from a BibTeX file using the multibib package
-%\section{Publications}
-%\nocitebook{book1,book2}
-%\bibliographystylebook{plain}
-%\bibliographybook{publications}                   % 'publications' is the name of a BibTeX file
-%\nocitemisc{misc1,misc2,misc3}
-%\bibliographystylemisc{plain}
-%\bibliographymisc{publications}                   % 'publications' is the name of a BibTeX file
 
-\section{Teaching}
-\cventry{
-Feb 2015--Jun 2015}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Bachelors Project}
-\cventry{
-Sep 2014--Dec 2014}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Programming Fundamentals I}
-\cventry{
-Feb 2014--Jun 2014}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Software Atelier IV}
-
-\section{Experience}
-\cventry{Apr 2013--Sep 2013}{Software engineer}{\href{http://www.cmdigital.no}{City Media Digital AS}}{}{}{}
-\cventry{Jan 2013--Apr 2013}{Intern}{\href{http://rmod.lille.inria.fr/web/}{RMoD}, \href{https://www.inria.fr}{Inria}}{}{}{}
-\cventry{Aug 2012--Jan 2013}{Software engineer}{\href{http://interlogic.com.ua}{InterLogic}}{}{}{}
-\cventry{Feb 2009--Jul 2012}{System Administrator}{\href{http://www.uar.net/en/}{Ukrainian Academic Research Network}}{}{}{}
+\section{Personal Information}
+\cvdoubleitem{Date of Birth}{Aug 11, 1991}{Citizenship}{Ukrainian}
+\cvdoubleitem{Place of Birth}{Lviv, Ukraine}{Marital Status}{Maried}
 
 \section{Languages}
 \cvdoubleitem{English}{Proficient}{Polish (spoken)}{Intermediate}
 \cvdoubleitem{Ukrainian}{Mother Tongue}{Russian (spoken)}{Intermediate}
 \cvitem{Italian}{Basic}
+
+\section{Hobby}
+Mountaineering, skiing, photography
 
 
 \end{document}
