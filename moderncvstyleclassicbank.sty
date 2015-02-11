@@ -102,7 +102,7 @@
 \renewcommand*{\namefont}{\Huge\bfseries\upshape}
 \renewcommand*{\titlefont}{\Huge\mdseries\upshape}
 \renewcommand*{\addressfont}{\normalsize\mdseries\upshape}
-\renewcommand*{\quotefont}{\large\slshape}
+\renewcommand*{\quotefont}{\slshape\rmfamily}
 \renewcommand*{\sectionfont}{\Large\bfseries\upshape}
 \renewcommand*{\subsectionfont}{\large\upshape\fontseries{sb}\selectfont}
 \renewcommand*{\hintfont}{\bfseries}
@@ -111,7 +111,7 @@
 \renewcommand*{\namestyle}[1]{{\namefont\textcolor{color1}{#1}}}
 \renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2!85}{#1}}}
 \renewcommand*{\addressstyle}[1]{{\addressfont\textcolor{color1}{#1}}}
-\renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{color1}{#1}}}
+\renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{color0}{#1}}}
 \renewcommand*{\sectionstyle}[1]{{\sectionfont\textcolor{color1}{#1}}}
 \renewcommand*{\subsectionstyle}[1]{{\subsectionfont\textcolor{color1}{#1}}}
 \renewcommand*{\hintstyle}[1]{{\hintfont\textcolor{color0}{#1}}}
@@ -131,7 +131,7 @@
 
 % commands
 \renewcommand*{\recomputecvlengths}{%
-  \setlength{\quotewidth}{0.65\textwidth}%
+  \setlength{\quotewidth}{0.9\textwidth}%
   % main lenghts
   \setlength{\maincolumnwidth}{\textwidth}%
   % listitem lengths
@@ -200,7 +200,7 @@
   % optional quote
   \ifthenelse{\isundefined{\@quote}}%
     {}%
-    {{\centering\begin{minipage}{\quotewidth}\centering\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
+    {{\centering\begin{minipage}{\quotewidth}\flushleft\quotestyle{\@quote}\end{minipage}\\[2.5em]}}%
   \par}% to avoid weird spacing bug at the first section if no blank line is left after \makecvtitle
 
 \RenewDocumentCommand{\section}{sm}{%
