@@ -1,12 +1,12 @@
 %!BIB TS-program = biber
 
 
-\documentclass[11pt,a4paper,sans]{moderncv} 
+\documentclass[11pt,a4paper,sans]{moderncv}
 
 \moderncvstyle{classicbank}
 \moderncvcolor{maroon}
 
-\nopagenumbers{}      
+\nopagenumbers{}
 \usepackage[utf8]{inputenc}
 
 \usepackage[scale=0.75]{geometry}
@@ -31,7 +31,7 @@
 	sorting=ydnt]{biblatex}
 \addbibresource{publications.bib}
 
-\renewcommand*{\newunitpunct}{\addcomma\space} 
+\renewcommand*{\newunitpunct}{\addcomma\space}
 
 \DeclareFieldFormat
   [inproceedings, thesis]
@@ -60,7 +60,7 @@
   \newunit
   \printfield{year}%
   \finentry}
-  
+
 \DeclareBibliographyDriver{thesis}{%
   \printfield{title}%
   \newunit\newblock
@@ -85,7 +85,7 @@
     \printbibliography[title={#1}, filter={#2}, heading=subbibliography]
   \end{refsection}
 }
-\quote{I'm a software engineer / computer scientist who likes to research new ideas, develop solutions, and teach to think different.\\
+\quote{I'm a software engineer / computer scientist who likes researching new ideas, developing solutions, and teaching.\\
 I am particularly interested in software maintenance and evolution, object-oriented and functional languages and over the last years I made some important contributions to Pharo -- an open source development environment.}
 
 
