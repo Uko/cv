@@ -1,10 +1,8 @@
 pdf:
-	pdflatex cv
+	lualatex cv
 	biber cv
-	pdflatex cv
-	pdflatex cv
-
+	lualatex cv
+	
 
 clean:
 	rm -f *.aux *.dvi *.log *.out *.bbl *.bcf *blg *xml
-	
