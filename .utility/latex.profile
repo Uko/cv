@@ -16,7 +16,7 @@ collection-basic 1
 collection-bibtexextra 1
 collection-binextra 0
 collection-context 0
-collection-fontsextra 0
+collection-fontsextra 1
 collection-fontsrecommended 1
 collection-fontutils 0
 collection-formatsextra 0
@@ -44,7 +44,7 @@ collection-langspanish 0
 collection-latex 1
 collection-latexextra 1
 collection-latexrecommended 1
-collection-luatex 0
+collection-luatex 1
 collection-mathextra 0
 collection-metapost 0
 collection-music 0
@@ -55,7 +55,7 @@ collection-pstricks 0
 collection-publishers 0
 collection-science 0
 collection-texworks 0
-collection-xetex 0
+collection-xetex 1
 in_place 0
 option_adjustrepo 0
 option_autobackup 0
