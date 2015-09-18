@@ -14,11 +14,11 @@
 \name{Yuriy}{Tymchuk}
 \title{Doctoral Assistant}                               % optional, remove / comment the line if not wanted
 \address{Universit\`a della Svizzera Italiana}{Via G. Buffi 13}{6904 Lugano, Switzerland}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
-\phone[fixed]{+41~(0)58~666~4293}                    % optional, remove / comment the line if not wanted
+%\phone[fixed]{+41~(0)58~666~4293}                    % optional, remove / comment the line if not wanted
 \email{yuriy.tymchuk@usi.ch}                               % optional, remove / comment the line if not wanted
-\homepage{yuriy.tymchuk.me}                         % optional, remove / comment the line if not wanted
-%\extrainfo{additional information}                 % optional, remove / comment the line if not wanted
-\photo[74pt][0pt]{picture_round}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\homepage{yuriy.tymch.uk}                         % optional, remove / comment the line if not wanted
+\extrainfo{}                 % optional, remove / comment the line if not wanted
+\photo[80pt][0pt]{picture_round}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 %\quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
 \usepackage{csquotes}
@@ -75,6 +75,7 @@
 
 \defbibfilter{conferences}{type=inproceedings and subtype=conference}
 \defbibfilter{demo}{type=inproceedings and subtype=demo}
+\defbibfilter{doc-symposium}{type=inproceedings and subtype=doc-sym}
 \defbibfilter{workshops}{type=inproceedings and subtype=workshop}
 \defbibfilter{theses}{type=thesis}
 
@@ -84,10 +85,8 @@
     \printbibliography[title={#1}, filter={#2}, heading=subbibliography]
   \end{refsection}
 }
-\quote{I'm a software engineer / computer scientist who just loves innovation, software development methodologies, teamwork and open source.\\
-I cannot affiliate myself with any programing language in particular as I believe that writing a program is an art of shaping a software system, and programming languages are just the tools.
-However at the moment I believe that the best tool is Pharo/Smalltalk.\\
-I like to lead, I like to make experiments, I hate when people are treated as resources.}
+\quote{I'm a software engineer / computer scientist who likes to research new ideas, develop solutions, and teach to think different.\\
+I am particularly interested in software maintenance and evolution, object-oriented and functional languages and over the last years I made some important contributions to Pharo -- an open source development environment.}
 
 
 
@@ -97,7 +96,11 @@ I like to lead, I like to make experiments, I hate when people are treated as re
 
 \makecvtitle
 
-\section{Experience}
+\section{Personal Information}
+\cvdoubleitem{Date of Birth}{Aug 11, 1991}{Citizenship}{Ukrainian}
+\cvdoubleitem{Place of Birth}{Lviv, Ukraine}{Marital Status}{Married}
+
+\section{Employment}
 \cventry{Oct 2013--Present}{Doctoral Assistant}{Universit\`a della Svizzera Italiana}{}{}{
 Modeling of software developers collaboration, based on the data mined from software repository.\\
 Research on code quality assessment and code review, development of \href{http://vidi.inf.usi.ch}{ViDI} project. }
@@ -115,6 +118,7 @@ Development of a Java3D applet for ventilation system configuration, with a back
 \cvitem{Experienced}{Pharo/Smalltalk, Ruby+Rails, Java, Agile, git, TDD}
 \cvitem{Familiar}{HTML, CSS, JavaScript, Scala, Objective-C, Python, C++, Lisp, MySQL, MongoDB, Mercurial, SVN}
 
+
 \section{Education}
 \cventry{2012--2013}{Ivan Franko National University of Lviv}{Master of Science}{}{}{Specialization in Informatics}
 \cventry{2008--2012}{Ivan Franko National University of Lviv}{Bachelor of Science}{}{}{Specialization in Informatics}
@@ -122,14 +126,24 @@ Development of a Java3D applet for ventilation system configuration, with a back
 \cventry{2006--2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{}{}{``Whimsical Bride'' - the graduation research project about statistics theory}
 
 
-\section{Selected Publications}
-\nocite{Tymc2015a, Tymc2014a, benevol13}
-\printbibliography[heading=none]                       % 'publications' is the name of a BibTeX file
 
+\section{Publications}
+\nocite{*}
+\printbibsection{conferences}{conferences}
+\printbibsection{formal demonstrations}{demo}
+\printbibsection{doctoral symposium}{doc-symposium}
+\printbibsection{workshops}{workshops}
+\printbibsection{theses}{theses}                       % 'publications' is the name of a BibTeX file
 
-\section{Personal Information}
-\cvdoubleitem{Date of Birth}{Aug 11, 1991}{Citizenship}{Ukrainian}
-\cvdoubleitem{Place of Birth}{Lviv, Ukraine}{Marital Status}{Maried}
+\section{Teaching}
+\cventry{Sep 2015--Dec 2015}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Programming Fundamentals I}
+\cventry{Feb 2015--Jun 2015}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Bachelors Project}
+\cventry{Sep 2014--Dec 2014}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Programming Fundamentals I}
+\cventry{Feb 2014--Jun 2014}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Software Atelier IV}
+
+\section{Service}
+\cventry{VISSOFT 2015}{3rd IEEE Working Conference on Software Visualization}{Artifact Evaluation Committee Member}{}{}{}
+
 
 \section{Languages}
 \cvdoubleitem{English}{Proficient}{Polish (spoken)}{Intermediate}
