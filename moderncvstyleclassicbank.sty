@@ -241,13 +241,15 @@
     {\listitemsymbol\begin{minipage}[t]{\listdoubleitemmaincolumnwidth}#3\end{minipage}}}}
 
 \renewcommand*{\cventry}[7][.25em]{
-  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
+  \begin{samepage}
+  	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
 	  {\bfseries #4} & {\itshape #2} \\%
 	  {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\bfseries #5}\\%
-  \end{tabular*}%
-  \ifx&#7&%
-    \else{\\\vbox{\small#7}}\fi%
-  \par\addvspace{#1}}
+  	\end{tabular*}%
+  	\ifx&#7&%
+      \else{\\\vbox{\small#7}}\fi%
+  	\par\addvspace{#1}
+  \end{samepage}}
 
 \newbox{\cvitemwithcommentmainbox}
 \newlength{\cvitemwithcommentmainlength}
