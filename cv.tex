@@ -1,3 +1,4 @@
+%!TEX TS-program = LuaLaTeX
 %!BIB TS-program = biber
 
 
@@ -10,6 +11,16 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage[scale=0.75]{geometry}
+
+
+\newcommand*{\jobentry}[4]{
+	\cventry{#1\vspace{-1\normalbaselineskip}}{}{#3 \textnormal{as {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
+  }
+
+\newcommand*{\eduentry}[4]{
+	\cventry{#1\vspace{-1\normalbaselineskip}}{}{#3 \textnormal{@ {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
+  }
+
 
 \name{Yuriy}{Tymchuk}
 \title{Research Assistant}                               % optional, remove / comment the line if not wanted
@@ -87,8 +98,8 @@
     \printbibliography[title={#1}, filter={#2}, heading=subbibliography]
   \end{refsection}
 }
-\quote{I'm a software engineer / computer scientist who likes researching new ideas, developing solutions, and teaching.\\
-I am particularly interested in software maintenance and evolution, object-oriented and functional programming languages. Over the last years I made important code quality-assistance contributions to Pharo -- an open source development environment.}
+\quote{I'm a software engineer / computer scientist and a hacker in general who likes researching new ideas, developing solutions, and teaching.\\
+I am focusing on software maintenance and evolution issues. I invest time in development of the tools that assist software engineers with their work.}
 
 
 
@@ -98,32 +109,37 @@ I am particularly interested in software maintenance and evolution, object-orien
 
 \makecvtitle
 
-\section{Employment}
-\cventry{Jan 2016 -- Present}{Research Assistant}{Universit{\"a}t Bern}{}{}{
-Reserch on software quality and evolutionary monitoring.}
-\cventry{Oct 2013 -- Dec 2015}{Doctoral Assistant}{Universit\`a della Svizzera Italiana}{}{}{
-Modeling of developers collaboration, based on the data mined from software repository.
-Research on code quality and code review, development of \href{http://vidi.inf.usi.ch}{ViDI} and \href{https://github.com/Uko/QualityAssistant\#quality-assistant-}{QualityAssistant} projects. Assistance in teaching. }
-\cventry{Apr 2013 -- Sep 2013}{Software engineer}{\href{http://www.innocode.no}{Innocode}}{}{}{
-Pre-project research concerning web-application for \href{http://www.leanbusiness.no/en/}{leanbusiness.no}.
-Development of \href{http://relink.no}{Relink} project in ruby on rails and also javascript, html, css. Contributed to git/CI workflow of the team.}
-\cventry{Jan 2013 -- Apr 2013}{Intern}{\href{http://rmod.lille.inria.fr/web/}{RMoD}, \href{https://www.inria.fr}{Inria}}{}{}{
-Research on AST metamodels. Development of FAST generic metamodel and symbol resolution algorithm.}
-\cventry{Aug 2012 -- Jan 2013}{Software engineer}{\href{http://interlogic.com.ua}{InterLogic}}{}{}{
-Development of a Java3D applet for ventilation system configuration, with a backend in PHP and MySQL.}
-\cventry{Mar 2010 -- Aug 2012}{Founder/Leader}{Unikernel Team \textnormal{\emph{(freelance)}}}{}{}{Different websites made from scratch. Usually online shops, sometimes web apps with rich frontend.}
-\cventry{Feb 2009 -- Jul 2012}{System Administrator}{\href{http://www.uar.net/en/}{Ukrainian Academic Research Network}}{}{}{Network administration, minor web development.}
+\section{Achievements}
 
-\section{Skills}
-\cvitem{Experienced}{Pharo/Smalltalk, Ruby+Rails, Java, Agile, git, TDD}
+\cvitem{\href{https://github.com/Uko/QualityAssistant}{QualityAssistant}}{My software-quality tool with a live feedback is integrated into the latest version of \href{http://pharo.org}{Pharo IDE}. Expected usage: 40 commercial companies, 30 universities (for teaching). }
+%\cvitem{StackOverflow}{reputation}
+
+\section{Employment}
+\jobentry{Jan 2016 -- Present}{Research Assistant}{Universit{\"a}t Bern}{
+Research on software quality and evolutionary monitoring. Maintenance if the group's git server. Invented a 3D visualization that allows detection of defects in software quality evolution.}
+\jobentry{Oct 2013 -- Dec 2015}{Doctoral Assistant}{Universit\`a della Svizzera Italiana}{
+Modeling of developers collaboration, based on the data mined from software repository.
+Research on code quality and code review, development of \href{http://vidi.inf.usi.ch}{ViDI} code review tool and \href{https://github.com/Uko/QualityAssistant}{QualityAssistant} static analyzer. Assistance in teaching. }
+\jobentry{Apr 2013 -- Sep 2013}{Software engineer}{\href{http://www.innocode.no}{Innocode}}{
+Pre-project research concerning web-application for \href{http://www.leanbusiness.no/en/}{leanbusiness.no}.
+Development of \href{http://relink.no}{Relink} project in Ruby on Rails. Increased performance of the team by introducing git-flow strategy.}
+\jobentry{Jan 2013 -- Apr 2013}{Intern}{\href{http://rmod.lille.inria.fr/web/}{RMoD}, \href{https://www.inria.fr}{Inria}}{
+Research on AST metamodels. Development of FAST: a generic metamodel and symbol resolution algorithm.}
+\jobentry{Aug 2012 -- Jan 2013}{Software engineer}{\href{http://interlogic.com.ua}{InterLogic}}{
+Development of a Java3D applet for ventilation system configuration, with a backend in PHP and MySQL. I've developed a module in Scala which decreased the complexity by an order of magnitude in comparison with Java implementation.}
+\jobentry{Mar 2010 -- Aug 2012}{Founder/Leader}{Unikernel Team \textnormal{\emph{(freelance)}}}{Different websites made from scratch. Usually online shops, sometimes web apps with rich frontend.}
+\jobentry{Feb 2009 -- Jul 2012}{System Administrator}{\href{http://www.uar.net/en/}{Ukrainian Academic Research Network}}{On call assistance, network administration, minor web development.}
+
+\section{Technical Skills}
+\cvitem{Experienced}{Pharo/Smalltalk, Ruby+Rails, Java, git, TDD, Software Maintainability}
 \cvitem{Familiar}{HTML, CSS, JavaScript, Scala, Objective-C, Python, C++, Lisp, MySQL, MongoDB, Mercurial, SVN}
 
 
 \section{Education}
-\cventry{2012 -- 2013}{Ivan Franko National University of Lviv}{Master of Science}{}{}{Specialization in Informatics}
-\cventry{2008 -- 2012}{Ivan Franko National University of Lviv}{Bachelor of Science}{}{}{Specialization in Informatics}
-\cventry{2006 -- 2008}{Lviv Physics and Mathematics Lyceum}{Highschool diploma}{}{}{Specialization in Physics and Mathematics}
-\cventry{2006 -- 2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{}{}{``Whimsical Bride'' - the graduation research project about statistics theory}
+\eduentry{2012 -- 2013}{Ivan Franko National University of Lviv}{Master of Science}{Specialization in Informatics}
+\eduentry{2008 -- 2012}{Ivan Franko National University of Lviv}{Bachelor of Science}{Specialization in Informatics}
+\eduentry{2006 -- 2008}{Lviv Physics and Mathematics Lyceum}{Highschool diploma}{Specialization in Physics and Mathematics}
+\eduentry{2006 -- 2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{``Whimsical Bride'' - the graduation research project about statistics theory}
 
 
 
@@ -136,13 +152,15 @@ Development of a Java3D applet for ventilation system configuration, with a back
 \printbibsection{theses}{theses}                       % 'publications' is the name of a BibTeX file
 
 \section{Teaching}
-\cventry{Sep 2015 -- Dec 2015}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Programming Fundamentals I}
-\cventry{Feb 2015 -- Jun 2015}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Bachelors Project}
-\cventry{Sep 2014 -- Dec 2014}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Programming Fundamentals I}
-\cventry{Feb 2014 -- Jun 2014}{Universit\`a della Svizzera Italiana}{Teaching Assistant}{}{}{Software Atelier IV}
+\jobentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
+Software Atelier IV\hfill {\itshape Spring 2014}\\
+Programming Fundamentals I\hfill {\itshape Fall 2014, Fall 2015}\\
+Bachelors Project\hfill {\itshape Spring 2015}}
+
 
 \section{Service}
-\cventry{VISSOFT 2015}{3rd IEEE Working Conference on Software Visualization}{Artifact Evaluation Committee Member}{}{}{}
+\cventry{VISSOFT 2016}{4rd IEEE Working Conference on Software Visualization}{Program Committee - NIER and Tool Tracks}{}{}{}
+\cventry{VISSOFT 2015}{3rd IEEE Working Conference on Software Visualization}{Artifact Evaluation Committee}{}{}{}
 
 \section{Personal Information}
 \cvdoubleitem{Date of Birth}{Aug 11, 1991}{Citizenship}{Ukrainian}
@@ -150,11 +168,11 @@ Development of a Java3D applet for ventilation system configuration, with a back
 
 \section{Languages}
 \cvdoubleitem{English}{Proficient}{Polish (spoken)}{Intermediate}
-\cvdoubleitem{Ukrainian}{Mother Tongue}{Russian (spoken)}{Intermediate}
+\cvdoubleitem{Ukrainian}{Native Speaker}{Russian (spoken)}{Intermediate}
 \cvitem{Italian}{Basic}
 
 \section{Hobby}
-Hiking, skiing, photography
+Hiking picturesque or difficult mountains and reflecting amazing moments of this world with my camera. Few years ago I was still doing Kyokushinkai karate which allowed me to train my body as hard as I was training my mind.
 
 \section{Remarks for Nerds}
 This cv is written in \LaTeX, versioned with git, hosted on \href{https://github.com/Uko/cv}{GitHub} and built with \href{https://travis-ci.org/Uko/cv}{Travis CI}
