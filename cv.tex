@@ -53,11 +53,21 @@
   {booktitle}{In #1}
 
 \DeclareNameFormat{author}{%
-	\textit{
-	\ifuseprefix
-		{\usebibmacro{name:first-last}{#1}{#4}{#5}{#8}}
-		{\usebibmacro{name:first-last}{#1}{#4}{#6}{#8}}%
-   \usebibmacro{name:andothers}}}
+		\textit{%
+        \nameparts{#1}%
+        \ifuseprefix
+          {\usebibmacro{name:given-family}
+          {\namepartfamily}
+          {\namepartgiveni}
+          {\namepartprefix}
+          {\namepartsuffixi}}
+        {\usebibmacro{name:given-family}
+          {\namepartfamily}
+          {\namepartgiveni}
+          {\namepartprefixi}
+          {\namepartsuffixi}}%
+      \usebibmacro{name:andothers}}}
+   
 
 \DeclareBibliographyDriver{inproceedings}{%
   \printfield{title}%
@@ -100,6 +110,7 @@
     \printbibliography[title={#1}, filter={#2}, heading=subbibliography]
   \end{refsection}
 }
+
 \quote{I'm a software engineer / computer scientist and a hacker in general who likes researching new ideas, developing solutions, and teaching.\\
 I am focusing on software maintenance and evolution issues. I invest time in development of the tools that assist software engineers with their work.}
 
