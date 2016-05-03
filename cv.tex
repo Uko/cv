@@ -12,13 +12,14 @@
 
 \usepackage[scale=0.75]{geometry}
 
+\newcommand*{\collapseline}{\vspace{-1\normalbaselineskip}}
 
 \newcommand*{\jobentry}[4]{
-	\cventry{#1\vspace{-1\normalbaselineskip}}{}{#3 \textnormal{as {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
+	\cventry{#1\collapseline}{}{#3 \textnormal{as {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
   }
 
 \newcommand*{\eduentry}[4]{
-	\cventry{#1\vspace{-1\normalbaselineskip}}{}{#3 \textnormal{@ {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
+	\cventry{#1\collapseline}{}{#3 \textnormal{@ {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
   }
 
 
@@ -91,6 +92,7 @@
 \defbibfilter{doc-symposium}{type=inproceedings and subtype=doc-sym}
 \defbibfilter{workshops}{type=inproceedings and subtype=workshop}
 \defbibfilter{theses}{type=thesis}
+\defbibfilter{selected}{keyword=selected}
 
 \newcommand{\printbibsection}[2]{
   \begin{refsection}
@@ -111,14 +113,14 @@ I am focusing on software maintenance and evolution issues. I invest time in dev
 
 \section{Achievements}
 
-\cvitem{\href{https://github.com/Uko/QualityAssistant}{QualityAssistant}}{My software-quality tool with a live feedback is integrated into the latest version of \href{http://pharo.org}{Pharo IDE}. Expected usage: 40 commercial companies, 30 universities (for teaching). }
+\cvitem{\href{https://github.com/Uko/QualityAssistant}{QualityAssistant}}{My software-quality tool with a live feedback is integrated into the latest version of \href{http://pharo.org}{Pharo IDE}. Expected usage: 30 commercial companies, 20 universities (for teaching).}
 %\cvitem{StackOverflow}{reputation}
 
 \section{Employment}
-\jobentry{Jan 2016 -- Present}{Research Assistant}{Universit{\"a}t Bern}{
-Research on software quality and evolutionary monitoring. Maintenance if the group's git server. Invented a 3D visualization that allows detection of defects in software quality evolution.}
-\jobentry{Oct 2013 -- Dec 2015}{Doctoral Assistant}{Universit\`a della Svizzera Italiana}{
-Modeling of developers collaboration, based on the data mined from software repository.
+\jobentry{Jan 2016 -- Present}{Research Assistant}{\href{http://www.unibe.ch}{Universit{\"a}t Bern}}{
+Research on software quality and evolutionary monitoring. Maintenance of the group's git server. Assistance in teaching. I've invented a 3D visualization that allows detection of defects in software quality evolution.}
+\jobentry{Oct 2013 -- Dec 2015}{Doctoral Assistant}{\href{http://www.usi.ch}{Universit\`a della Svizzera Italiana}}{
+Modeling of developer collaboration, based on the data mined from software repository.
 Research on code quality and code review, development of \href{http://vidi.inf.usi.ch}{ViDI} code review tool and \href{https://github.com/Uko/QualityAssistant}{QualityAssistant} static analyzer. Assistance in teaching. }
 \jobentry{Apr 2013 -- Sep 2013}{Software engineer}{\href{http://www.innocode.no}{Innocode}}{
 Pre-project research concerning web-application for \href{http://www.leanbusiness.no/en/}{leanbusiness.no}.
@@ -126,8 +128,8 @@ Development of \href{http://relink.no}{Relink} project in Ruby on Rails. Increas
 \jobentry{Jan 2013 -- Apr 2013}{Intern}{\href{http://rmod.lille.inria.fr/web/}{RMoD}, \href{https://www.inria.fr}{Inria}}{
 Research on AST metamodels. Development of FAST: a generic metamodel and symbol resolution algorithm.}
 \jobentry{Aug 2012 -- Jan 2013}{Software engineer}{\href{http://interlogic.com.ua}{InterLogic}}{
-Development of a Java3D applet for ventilation system configuration, with a backend in PHP and MySQL. I've developed a module in Scala which decreased the complexity by an order of magnitude in comparison with Java implementation.}
-\jobentry{Mar 2010 -- Aug 2012}{Founder/Leader}{Unikernel Team \textnormal{\emph{(freelance)}}}{Different websites made from scratch. Usually online shops, sometimes web apps with rich frontend.}
+Development of a Java3D applet for ventilation system configuration with a backend in PHP and MySQL. I've developed a module in Scala which decreased the complexity by an order of magnitude in comparison with Java implementation.}
+\jobentry{Mar 2010 -- Aug 2012}{Founder/Leader}{\href{http://unikernel.net}{Unikernel Team} \textnormal{\emph{(freelance)}}}{Different websites made from scratch. Usually online shops, sometimes web apps with rich frontend.}
 \jobentry{Feb 2009 -- Jul 2012}{System Administrator}{\href{http://www.uar.net/en/}{Ukrainian Academic Research Network}}{On call assistance, network administration, minor web development.}
 
 \section{Technical Skills}
@@ -142,14 +144,16 @@ Development of a Java3D applet for ventilation system configuration, with a back
 \eduentry{2006 -- 2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{``Whimsical Bride'' - the graduation research project about statistics theory}
 
 
-
-\section{Publications}
 \nocite{*}
+\section{Publications}
 \printbibsection{conferences}{conferences}
 \printbibsection{formal demonstrations}{demo}
 \printbibsection{doctoral symposium}{doc-symposium}
 \printbibsection{workshops}{workshops}
 \printbibsection{theses}{theses}                       % 'publications' is the name of a BibTeX file
+
+%\section{Selected Publications}
+%\printbibliography[sorting=chronological, keyword=selected, heading=none]
 
 \section{Teaching}
 \jobentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
