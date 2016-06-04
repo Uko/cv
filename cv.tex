@@ -7,8 +7,16 @@
 \moderncvstyle{classicbank}
 \moderncvcolor{maroon}
 
+\newif\ifselectedpub
+\newif\ifphdeducation
+
+
+%\selectedpubtrue 
+%\phdeducationtrue
+
+
+
 \nopagenumbers{}
-\usepackage[utf8]{inputenc}
 
 \usepackage[scale=0.75]{geometry}
 
@@ -33,6 +41,7 @@
 \photo[80pt][0pt]{picture_round}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 %\quote{Some quote}                                 % optional, remove / comment the line if not wanted
 
+\usepackage{textcomp}
 \usepackage{csquotes}
 \usepackage[backend=biber,
 	maxnames=99,
@@ -40,7 +49,8 @@
 	isbn=false,
 	doi=false,
 	url=false,
-	sorting=ydnt]{biblatex}
+	sorting=ydnt,
+	defernumbers=true]{biblatex}
 \addbibresource{publications.bib}
 
 \renewcommand*{\newunitpunct}{\addcomma\space}
@@ -149,6 +159,9 @@ Development of a Java3D applet for ventilation system configuration with a backe
 
 
 \section{Education}
+\ifphdeducation
+\eduentry{2013 -- 2017}{University of Lugano \& University of Bern}{Ph.D. in Informatics \textnormal{\emph{(ongoing)}}}{Thesis topic: ``Treating Code Quality as a First Class Entity''}
+\fi
 \eduentry{2012 -- 2013}{Ivan Franko National University of Lviv}{Master of Science}{Specialization in Informatics}
 \eduentry{2008 -- 2012}{Ivan Franko National University of Lviv}{Bachelor of Science}{Specialization in Informatics}
 \eduentry{2006 -- 2008}{Lviv Physics and Mathematics Lyceum}{Highschool diploma}{Specialization in Physics and Mathematics}
@@ -156,15 +169,21 @@ Development of a Java3D applet for ventilation system configuration with a backe
 
 
 \nocite{*}
-\section{Publications}
-\printbibsection{conferences}{conferences}
-\printbibsection{formal demonstrations}{demo}
-\printbibsection{doctoral symposium}{doc-symposium}
-\printbibsection{workshops}{workshops}
-\printbibsection{theses}{theses}                       % 'publications' is the name of a BibTeX file
 
-%\section{Selected Publications}
-%\printbibliography[sorting=chronological, keyword=selected, heading=none]
+\ifselectedpub
+	\section{Selected Publications}
+	\printbibliography[sorting=chronological, keyword=selected, heading=none]
+\else
+	\section{Publications}
+	\printbibsection{conferences}{conferences}
+	\printbibsection{formal demonstrations}{demo}
+	\printbibsection{doctoral symposium}{doc-symposium}
+	\printbibsection{workshops}{workshops}
+	\printbibsection{theses}{theses}  
+\fi
+
+                  
+
 
 \section{Teaching}
 \jobentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
