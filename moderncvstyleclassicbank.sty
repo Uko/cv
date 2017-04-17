@@ -180,7 +180,7 @@
       \setlength{\fboxrule}{\@photoframewidth}%
       \ifdim\@photoframewidth=0pt%
         \setlength{\fboxsep}{0pt}\fi%
-      \framebox{\includegraphics[width=\@photowidth]{\@photo}}}}%
+      \framebox{\raisebox{0.75\baselineskip}{\includegraphics[width=\@photowidth]{\@photo}}}}}%
   % name and title
   \newlength{\makecvtitledetailswidth}\settowidth{\makecvtitledetailswidth}{\usebox{\makecvtitledetailsbox}}%
   \newlength{\makecvtitledetailsheight}\settoheight{\makecvtitledetailsheight}{\usebox{\makecvtitledetailsbox}}%

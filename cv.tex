@@ -12,7 +12,7 @@
 
 
 %\selectedpubtrue 
-%\phdeducationtrue
+\phdeducationtrue
 
 
 
@@ -20,10 +20,25 @@
 
 \usepackage[scale=0.75]{geometry}
 
+\usepackage{etoolbox}
+\usepackage{tcolorbox}
+
+
 \newcommand*{\collapseline}{\vspace{-1\normalbaselineskip}}
 
-\newcommand*{\jobentry}[4]{
+\newtcbox{\tech}{nobeforeafter, box align=base, colframe=color1, boxrule=0.4pt, arc=0mm, left=2pt, right=2pt, top=0pt, bottom=0pt, boxsep=0pt, before upper=\strut}
+
+\newcommand{\tpharo}{\href{http://pharo.org}{\tech{Pharo}}~}
+\newcommand{\tmoose}{\href{http://moosetechnology.org}{\tech{Moose}}~}
+\newcommand{\troassal}{\href{http://agilevisualization.com}{\tech{Roassal}}~}
+
+
+\newcommand*{\teachentry}[4]{
 	\cventry{#1\collapseline}{}{#3 \textnormal{as {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
+  }
+
+\newcommand*{\jobentry}[5]{
+	\cventry{#1\collapseline}{}{#3 \textnormal{as {\itshape #2}}}{}{}{#4 \notblank{#5}{\\\texttt{\footnotesize #5}}{}}\vspace{0.1\normalbaselineskip}
   }
 
 \newcommand*{\eduentry}[4]{
@@ -137,25 +152,26 @@ Currently, my primary focus is software maintenance and evolution. I develop too
 \cvitem{\href{https://github.com/Uko/QualityAssistant}{QualityAssistant}}{My software-quality tool with a live feedback is integrated into the latest version of \href{http://pharo.org}{Pharo IDE}. Expected usage: 30 commercial companies, 20 universities (for teaching).}
 %\cvitem{StackOverflow}{reputation}
 
+
 \section{Employment}
 \jobentry{Jan 2016 -- Sep 2017 (expected)}{Research Assistant}{\href{http://www.unibe.ch}{Universit{\"a}t Bern}}{
-Research on software quality and evolutionary monitoring. Maintenance of the group's git server. Assistance in teaching. I've invented a 3D visualization that allows detection of defects in software quality evolution.}
+Research on software quality and evolutionary monitoring. Maintenance of the group's git server. I've invented a 3D visualization that allows detection of defects in software quality evolution. Teaching.}{\tpharo \tmoose \troassal \tech{Python} \tech{Ruby} \tech{Java} \tech{git}}
 \jobentry{Oct 2013 -- Dec 2015}{Doctoral Assistant}{\href{http://www.usi.ch}{Universit\`a della Svizzera Italiana}}{
 Modeling of developer collaboration, based on the data mined from software repository.
-Research on code quality and code review, development of \href{http://vidi.inf.usi.ch}{ViDI} code review tool and \href{https://github.com/Uko/QualityAssistant}{QualityAssistant} static analyzer. Assistance in teaching. }
+Research on code quality and code review, development of \href{http://vidi.inf.usi.ch}{ViDI} code review tool and \href{https://github.com/Uko/QualityAssistant}{QualityAssistant} static analyzer. Teaching.}{\tpharo \tmoose \troassal \tech{Gephi} \tech{Python} \tech{Racket} \tech{MongoDB}}
 \jobentry{Apr 2013 -- Sep 2013}{Software engineer}{\href{http://www.innocode.no}{Innocode}}{
-Pre-project research concerning web-application for \href{http://www.leanbusiness.no/en/}{leanbusiness.no}.
-Development of \href{http://relink.no}{Relink} project in Ruby on Rails. Increased performance of the team by introducing git-flow strategy.}
+Pre-project research concerning a \href{http://www.leanbusiness.no/en/}{leanbusiness.no} web-application.
+Development of \href{http://relink.no}{Relink} project in Ruby on Rails. Increased performance of the team by introducing git-flow strategy.}{\tech{Ruby on Rails} \tech{JavaScript} \tech{HTML/CSS} \tech{git}}
 \jobentry{Jan 2013 -- Apr 2013}{Intern}{\href{http://rmod.lille.inria.fr/web/}{RMoD}, \href{https://www.inria.fr}{Inria}}{
-Research on AST metamodels. Development of FAST: a generic metamodel and symbol resolution algorithm.}
+Research on AST metamodels. Development of FAST: a generic metamodel and symbol resolution algorithm.}{\tpharo \tmoose \tech{PetitParser}}
 \jobentry{Aug 2012 -- Jan 2013}{Software engineer}{\href{http://interlogic.com.ua}{InterLogic}}{
-Development of a Java3D applet for ventilation system configuration with a backend in PHP and MySQL. I've developed a module in Scala which decreased the complexity by an order of magnitude in comparison with Java implementation.}
-\jobentry{Mar 2010 -- Aug 2012}{Founder/Leader}{\href{http://unikernel.net}{Unikernel Team} \textnormal{\emph{(freelance)}}}{Different websites made from scratch. Usually online shops, sometimes web apps with rich frontend.}
-\jobentry{Feb 2009 -- Jul 2012}{Network Administrator}{\href{http://www.uar.net/en/}{UARNet ISP}}{On call assistance, network administration, minor web development.}
+Development of a Java3D applet for ventilation system configuration with a backend in PHP and MySQL. I've developed a module in Scala which decreased the complexity by an order of magnitude in comparison with Java implementation.}{\tech{Java} \tech{Java3D} \tech{Scala} \tech{PHP} \tech{MySQL}}
+\jobentry{Mar 2010 -- Aug 2012}{Founder/Leader}{\href{http://unikernel.net}{Unikernel Team} \textnormal{\emph{(freelance)}}}{Different websites made from scratch. Usually online shops, sometimes web apps with rich frontend.}{\tech{HTML/CSS} \tech{PHP} \tech{CakePHP} \tech{JavaScript} \tech{Raphaël JS} \tech{MySQL}}
+\jobentry{Feb 2009 -- Jul 2012}{Network Administrator}{\href{http://www.uar.net/en/}{UARNet ISP}}{On call assistance, network administration, minor web development.}{\tech{FreeBSD} \tech{Linux} \tech{iptables} \tech{Oracle RDBMS} \tech{PHP}}
 
-\section{Programming Skills}
-\cvitem{Experienced}{Pharo/Smalltalk, Ruby+Rails, Java, git, TDD, Software Maintainability}
-\cvitem{Familiar}{HTML, CSS, JavaScript, Scala, Objective-C, Python, C++, Lisp, MySQL, MongoDB, Mercurial, SVN}
+%\section{Programming Skills}
+%\cvitem{Experienced}{Pharo/Smalltalk, Ruby+Rails, Java, git, TDD, Software Maintainability}
+%\cvitem{Familiar}{HTML, CSS, JavaScript, Scala, Objective-C, Python, C++, Lisp, MySQL, MongoDB, Mercurial, SVN}
 
 
 \section{Education}
@@ -188,23 +204,27 @@ Development of a Java3D applet for ventilation system configuration with a backe
 
 \section{Teaching}
 
-\jobentry{}{Teacher}{Ukrainian Catholic University}{
+\teachentry{}{Teacher}{Ukrainian Catholic University}{
 Advanced Programming\hfill {\itshape Fall 2016}}
 
-\jobentry{}{Teaching Assistant}{Universit{\"a}t Bern}{
+\teachentry{}{Teaching Assistant}{Universit{\"a}t Bern}{
 Compiler Construction\hfill {\itshape Spring 2017}\\
 Software Modeling and Analysis\hfill {\itshape Fall 2016}}
 
-\jobentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
+\teachentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
 Bachelors Project\hfill {\itshape Spring 2015}\\
 Programming Fundamentals I\hfill {\itshape Fall 2014, Fall 2015}\\
 Software Atelier IV\hfill {\itshape Spring 2014}}
 
 
 \section{Service}
+\cventry{IWST 2017}{9th International Workshop on Smalltalk Technologies}{Program Committee}{}{}{}
+\cventry{VISSOFT 2017}{5th IEEE Working Conference on Software Visualization}{Program Committee - NIER and Tool Tracks}{}{}{}
+\cventry{GSoC 2017}{Pharo Consortium participation in the Google Summer of Code}{Organization Admin}{}{}{}
 \cventry{ICTERI 2017}{13th Int. Conference on ICT in Education, Research and Industrial Applications}{Program Committee - Poster \& Demo Track}{}{}{}
-\cventry{VISSOFT 2016}{4rd IEEE Working Conference on Software Visualization}{Program Committee - NIER and Tool Tracks}{}{}{}
+\cventry{VISSOFT 2016}{4th IEEE Working Conference on Software Visualization}{Program Committee - NIER and Tool Tracks}{}{}{}
 \cventry{VISSOFT 2015}{3rd IEEE Working Conference on Software Visualization}{Artifact Evaluation Committee}{}{}{}
+\cventry{GSoC 2013}{ESUG participation in the Google Summer of Code}{Student's Mentor}{}{}{}
 
 \section{Personal Information}
 \cvdoubleitem{Date of Birth}{Aug 11, 1991}{Marital Status}{Married}
@@ -217,7 +237,7 @@ Software Atelier IV\hfill {\itshape Spring 2014}}
 \cvitem{Italian}{Basic}
 
 \section{Hobby}
-Hiking picturesque or difficult mountains and reflecting amazing moments of this world with my camera. Few years ago I was still doing Kyokushinkai karate which allowed me to train my body as hard as I was training my mind.
+Hiking picturesque or difficult mountains and reflecting amazing moments of this world with my camera (\url{https://500px.com/yuriy_tymchuk}). Few years ago I was still doing Kyokushinkai karate which allowed me to train my body as hard as I trainin my mind.
 
 \section{Remarks for Nerds}
 This cv is written in \LaTeX, versioned with git, hosted on \href{https://github.com/Uko/cv}{GitHub} and built with \href{https://travis-ci.org/Uko/cv}{Travis CI}
