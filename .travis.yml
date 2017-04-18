@@ -1,3 +1,5 @@
+dist: trusty
+
 env:
   global:
     secure: YeRhMTfGby4J66mioljmRKoItdegI7YrI3yW8shy7Tn9w4xQr+6WzIGU7YXDg+eHFbtLzE3ib+vZv+rkWpM9ns3F3YnLD2e+YSH71Ib3LLAtFhY1QM/7xDoXSjRU9PQZkxej55E/VbWArqRrNOYFrqjI3S5VZLJ3FF9ZpgLIYyE=
