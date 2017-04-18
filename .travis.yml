@@ -1,13 +1,15 @@
-dist: trusty
-
 env:
   global:
     secure: YeRhMTfGby4J66mioljmRKoItdegI7YrI3yW8shy7Tn9w4xQr+6WzIGU7YXDg+eHFbtLzE3ib+vZv+rkWpM9ns3F3YnLD2e+YSH71Ib3LLAtFhY1QM/7xDoXSjRU9PQZkxej55E/VbWArqRrNOYFrqjI3S5VZLJ3FF9ZpgLIYyE=
 
-addons:
-  apt:
-    packages:
-    - texlive-full
+install:
+  - wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
+  - tar -zxvf install-tl-unx.tar.gz
+  - cd install-tl-*
+  - sudo ./install-tl --profile="$TRAVIS_BUILD_DIR/.utility/latex.profile"
+  - export PATH=$PATH:/usr/local/texlive/2014/bin/x86_64-linux
+  - cd $TRAVIS_BUILD_DIR
+
 
 script: make
 
