@@ -27,11 +27,16 @@
 \newcommand*{\collapseline}{\vspace{-1\normalbaselineskip}}
 
 \newtcbox{\tech}{nobeforeafter, box align=base, colframe=color1, boxrule=0.4pt, arc=0mm, left=2pt, right=2pt, top=0pt, bottom=0pt, boxsep=0pt, before upper=\strut}
+\newtcbox{\toolbox}{nobeforeafter, box align=base, colframe=black, boxrule=0pt, arc=0mm, left=2pt, right=2pt, top=0pt, bottom=0pt, boxsep=0pt, before upper=\strut}
+\newcommand{\tool}[2]{\href{#1}{\toolbox{#2}}}
 
 \newcommand{\tpharo}{\href{http://pharo.org}{\tech{Pharo}}~}
 \newcommand{\tmoose}{\href{http://moosetechnology.org}{\tech{Moose}}~}
 \newcommand{\troassal}{\href{http://agilevisualization.com}{\tech{Roassal}}~}
 
+\newcommand*{\serviceentry}[3]{
+	\cventry{#1\collapseline}{}{#2}{}{}{#3}\vspace{0.1\normalbaselineskip}
+  }
 
 \newcommand*{\teachentry}[4]{
 	\cventry{#1\collapseline}{}{#3 \textnormal{as {\itshape #2}}}{}{}{#4}\vspace{0.1\normalbaselineskip}
@@ -192,6 +197,17 @@ Development of a Java3D applet for ventilation system configuration with a backe
 \eduentry{2016}{CUSO Winter School}{\href{https://www.cuso.ch/activity/?p=2283\&uid=3022}{Taming Big Data}}{}
 \eduentry{2014}{International Summer School on Software Eng.}{\href{http://www.sesa.unisa.it/seschool/previousEditions/2014/}{Search-Based Software Engineering}}{}
 
+\section{Latest Tools, Frameworks, and Libraries}
+\tool{https://github.com/Uko/GitHubcello}{GitHubcello}
+\tool{https://github.com/Uko/DeprecationAssistant}{DeprecationAssistant}
+\tool{https://github.com/Uko/MatchTool}{MatchTool}
+\tool{https://github.com/Uko/QualityAssistant}{QualityAssistant}
+\tool{http://yuriy.tymch.uk/Renraku/}{Renraku}
+\tool{http://yuriy.tymch.uk/Vidi}{ViDI}
+\tool{http://yuriy.tymch.uk/Smalldromeda}{Smalldromeda}
+
+\vspace{1pt} Most of my project are available at my GitHUb account \href{https://github.com/Uko}{[github.com/Uko]}
+
 \nocite{*}
 
 \ifselectedpub
@@ -214,11 +230,9 @@ Development of a Java3D applet for ventilation system configuration with a backe
 
 \teachentry{}{Lecturer}{Ukrainian Catholic University}{
 Advanced Programming\hfill {\itshape Fall 2016}}
-
 \teachentry{}{Teaching Assistant}{Universit{\"a}t Bern}{
 Compiler Construction\hfill {\itshape Spring 2017}\\
 Software Modeling and Analysis\hfill {\itshape Fall 2016}}
-
 \teachentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
 Bachelors Project\hfill {\itshape Spring 2015}\\
 Programming Fundamentals I\hfill {\itshape Fall 2014, Fall 2015}\\
@@ -226,13 +240,17 @@ Software Atelier IV\hfill {\itshape Spring 2014}}
 
 
 \section{Service}
-\cventry{IWST 2017}{9th International Workshop on Smalltalk Technologies}{Program Committee}{}{}{}
-\cventry{VISSOFT 2017}{5th IEEE Working Conference on Software Visualization}{Program Committee - NIER and Tool Tracks}{}{}{}
-\cventry{GSoC 2017}{Pharo Consortium participation in the Google Summer of Code}{Organization Admin \& Student's Mentor}{}{}{}
-\cventry{ICTERI 2017}{13th Int. Conference on ICT in Education, Research and Industrial Applications}{Program Committee - Poster \& Demo Track}{}{}{}
-\cventry{VISSOFT 2016}{4th IEEE Working Conference on Software Visualization}{Program Committee - NIER and Tool Tracks}{}{}{}
-\cventry{VISSOFT 2015}{3rd IEEE Working Conference on Software Visualization}{Artifact Evaluation Committee}{}{}{}
-\cventry{GSoC 2013}{ESUG participation in the Google Summer of Code}{Student's Mentor}{}{}{}
+\serviceentry{}{[IWST] International Workshop on Smalltalk Technologies}{
+Program Committee \hfill {\itshape 2017}}
+\serviceentry{}{[VISSOFT] IEEE Working Conference on Software Visualization}{
+Program Committee - NIER and Tool Demo Track \hfill {\itshape 2017}\\
+Program Committee - NIER and Tool Demo Track \hfill {\itshape 2016}\\
+Program Committee - Artifact Track      \hfill {\itshape 2015}}
+\serviceentry{}{[GSoC] Google Summer of Code}{
+Pharo Consortium Organization Admin and Student's Mentor \hfill {\itshape 2017}\\
+European Smalltalk Users Group Student's Mentor         \hfill {\itshape 2015}}
+
+
 
 \section{Personal Information}
 \cvdoubleitem{Date of Birth}{Aug 11, 1991}{Marital Status}{Married}
