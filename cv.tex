@@ -22,12 +22,14 @@
 
 \usepackage{etoolbox}
 \usepackage{tcolorbox}
+\usepackage{fontawesome}
+
 
 
 \newcommand*{\collapseline}{\vspace{-1\normalbaselineskip}}
 
-\newtcbox{\tech}{nobeforeafter, box align=base, colframe=color1, boxrule=0.4pt, arc=0mm, left=2pt, right=2pt, top=0pt, bottom=0pt, boxsep=0pt, before upper=\strut}
-\newtcbox{\toolbox}{nobeforeafter, box align=base, colframe=black, boxrule=0.1pt, arc=0mm, left=2pt, right=2pt, top=0pt, bottom=0pt, boxsep=0pt, before upper=\strut}
+\newtcbox{\tech}{on line, colframe=color1, boxrule=0.4pt, arc=0mm, left=2pt, right=2pt, top=0pt, bottom=0pt, boxsep=0pt, before upper=\strut}
+\newtcbox{\toolbox}{nobeforeafter, tcbox raise=-8pt , colframe=black, boxrule=0.1pt, arc=0mm, left=2pt, right=2pt, top=0pt, bottom=0pt, boxsep=0pt, before upper=\strut}
 \newcommand{\tool}[2]{\href{#1}{\toolbox{#2}}}
 
 \newcommand{\tpharo}{\href{http://pharo.org}{\tech{Pharo}}~}
@@ -197,7 +199,11 @@ Development of a Java3D applet for ventilation system configuration with a backe
 \eduentry{2016}{CUSO Winter School}{\href{https://www.cuso.ch/activity/?p=2283\&uid=3022}{Taming Big Data}}{}
 \eduentry{2014}{International Summer School on Software Eng.}{\href{http://www.sesa.unisa.it/seschool/previousEditions/2014/}{Search-Based Software Engineering}}{}
 
+
 \section{Latest Tools, Frameworks, and Libraries}
+
+\faArrowCircleORight \  Most of my project are available at my GitHub account \href{https://github.com/Uko}{[github.com/Uko]}
+
 \tool{https://github.com/Uko/GitHubcello}{GitHubcello}
 \tool{https://github.com/Uko/DeprecationAssistant}{DeprecationAssistant}
 \tool{https://github.com/Uko/MatchTool}{MatchTool}
@@ -206,13 +212,15 @@ Development of a Java3D applet for ventilation system configuration with a backe
 \tool{http://yuriy.tymch.uk/Vidi}{ViDI}
 \tool{http://yuriy.tymch.uk/Smalldromeda}{Smalldromeda}
 
-\vspace{1pt} Most of my project are available at my GitHub account \href{https://github.com/Uko}{[github.com/Uko]}
 
 \nocite{*}
 
 \section{\ifselectedpub Selected \fi Publications}
 
-Besides academic publishing I have a codding blog: \href{http://code.yuriy.tymch.uk}{[code.yuriy.tymch.uk]}
+\faArrowCircleORight \  Besides academic publishing I have a coding blog: \href{http://code.yuriy.tymch.uk}{[code.yuriy.tymch.uk]}
+
+\vspace{-8pt}
+
 
 \ifselectedpub
 	\newrefcontext[sorting=ydnt]
