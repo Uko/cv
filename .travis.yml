@@ -2,14 +2,11 @@ env:
   global:
     secure: YeRhMTfGby4J66mioljmRKoItdegI7YrI3yW8shy7Tn9w4xQr+6WzIGU7YXDg+eHFbtLzE3ib+vZv+rkWpM9ns3F3YnLD2e+YSH71Ib3LLAtFhY1QM/7xDoXSjRU9PQZkxej55E/VbWArqRrNOYFrqjI3S5VZLJ3FF9ZpgLIYyE=
 
+before_install:
+  - curl -L https://github.com/holgern/travis-texlive/releases/download/2017-07-05_09/texlive.tar.xz | tar -JxC ~
 install:
-  - wget http://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz
-  - tar -zxvf install-tl-unx.tar.gz
-  - cd install-tl-*
-  - sudo ./install-tl --profile="$TRAVIS_BUILD_DIR/.utility/latex.profile"
-  - export PATH=$PATH:/usr/local/texlive/2016/bin/x86_64-linux
+  - PATH=$HOME/texlive/bin/x86_64-linux:$PATH
   - cd $TRAVIS_BUILD_DIR
-
 
 script: make
 
