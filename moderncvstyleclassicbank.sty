@@ -99,8 +99,10 @@
 %                resume style definition
 %-------------------------------------------------------------------------------
 % fonts
-\renewcommand*{\namefont}{\Huge\bfseries\upshape}
-\renewcommand*{\titlefont}{\Huge\mdseries\upshape}
+%\renewcommand*{\namefont}{\Huge\mdseries\upshape}
+\renewcommand*{\namefont}{\fontsize{23}{20}\bfseries\upshape}
+%\renewcommand*{\titlefont}{\Huge\mdseries\upshape}
+\renewcommand*{\titlefont}{\fontsize{23}{20}\mdseries\upshape}
 \renewcommand*{\addressfont}{\normalsize\mdseries\upshape}
 \renewcommand*{\quotefont}{\slshape\rmfamily}
 \renewcommand*{\sectionfont}{\Large\bfseries\upshape}
@@ -180,7 +182,7 @@
       \setlength{\fboxrule}{\@photoframewidth}%
       \ifdim\@photoframewidth=0pt%
         \setlength{\fboxsep}{0pt}\fi%
-      \framebox{\raisebox{0.75\baselineskip}{\includegraphics[width=\@photowidth]{\@photo}}}}}%
+      \framebox{\raisebox{0.35\baselineskip}{\includegraphics[width=\@photowidth]{\@photo}}}}}%
   % name and title
   \newlength{\makecvtitledetailswidth}\settowidth{\makecvtitledetailswidth}{\usebox{\makecvtitledetailsbox}}%
   \newlength{\makecvtitledetailsheight}\settoheight{\makecvtitledetailsheight}{\usebox{\makecvtitledetailsbox}}%

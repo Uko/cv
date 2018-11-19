@@ -8,11 +8,12 @@
 \moderncvcolor{maroon}
 
 \newif\ifselectedpub
-\newif\ifphdeducation
+\newif\iffull
 
 
 %\selectedpubtrue 
-\phdeducationtrue
+%\fulltrue
+
 
 
 
@@ -59,8 +60,8 @@
   }
 
 
-\name{Yuriy}{Tymchuk}
-\title{Data Scientist}                               % optional, remove / comment the line if not wanted
+\name{Dr. Yuriy}{Tymchuk}
+\title{Big Data Engineer}                               % optional, remove / comment the line if not wanted
 \address{Waldeggstrasse 51}{CH-3097 Liebefeld}{Switzerland}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
 %\phone[fixed]{+41~(0)58~666~4293}                    % optional, remove / comment the line if not wanted
 \email{yuriy.tymchuk@swisscom.com}                               % optional, remove / comment the line if not wanted
@@ -149,8 +150,7 @@
   \end{refsection}
 }
 
-\quote{I'm a software engineer / computer scientist and a hacker in general, who likes researching new ideas, developing impactful solutions, and teaching.\\
-I develop tools that assist software engineers to build healthy projects.}
+\quote{I'm a software engineer / computer scientist and a hacker in general, who loves to solve challenging problems. Programming is the main activity that helps me to bring my solutions alive.}
 
 
 \makeatletter\chardef\pdf@shellescape=\@ne\makeatother
@@ -164,11 +164,11 @@ I develop tools that assist software engineers to build healthy projects.}
 
 \cvitem{\href{https://github.com/Uko/QualityAssistant}{QualityAssistant}}{My software-quality tool with a live feedback is integrated into the latest version of \href{http://pharo.org}{Pharo IDE}. Expected usage: 30 commercial companies, 20 universities (for teaching).}
 \cvitem{Live 3D visualizations video \textnormal{\href{https://youtu.be/CuimMwuZiGA}{[youtu.be/CuimMwuZiGA]}}}{was used in a couple of dozen presentations for demonstrating the idea of live programming.}
-\cvitem{\href{https://stackoverflow.com/users/982238/uko}{StackOverflow}}{Owner of \href{https://stackoverflow.com/help/badges/1829/pharo}{\sobadge{pharo-badge}} {\footnotesize (7 owners in total)} and \href{https://stackoverflow.com/help/badges/2904/smalltalk}{\sobadge{smalltalk-badge}} {\footnotesize (2 owners in total)} badges.}
+\cvitem{\href{https://stackoverflow.com/users/982238/uko}{StackOverflow}}{Owner of \href{https://stackoverflow.com/help/badges/1829/pharo}{\sobadge{pharo-badge}} {\footnotesize (9 owners in total)} and \href{https://stackoverflow.com/help/badges/2904/smalltalk}{\sobadge{smalltalk-badge}} {\footnotesize (3 owners in total)} badges.}
 
 
 \section{Employment}
-\jobentry{Dec 2017 -- ongoing}{Data Scientist}{\href{http://swisscom.ch}{Swisscom}}{Still sciencing data...}{}
+\jobentry{Dec 2017 -- ongoing}{Big Data Engineer {\small (+ Scrum Master)}}{\href{http://swisscom.ch}{Swisscom}}{Development of an ETL application, refactoring of a client-facing web app, maintenance of a CI/DC infrastructure. Reduced the deployment time from one human/day to a few minutes with minimum interactions.}{\tech{Scala} \tech{Spark} \tech{NodeJS} \tech{Solr} \tech{Jenkins} \tech{Cloud Foundry}}
 \jobentry{Jan 2016 -- Nov 2017}{Research Assistant}{\href{http://www.unibe.ch}{Universit{\"a}t Bern}}{
 Research on embedding quality assistance into development workflow. Maintenance of the group's git server. I've invented a 3D visualization that allows detection of defects in software quality evolution. Teaching.}{\tpharo \tmoose \troassal \tech{Python} \tech{Ruby} \tech{Java} \tech{git}}
 \jobentry{Jun 2015 -- ongoing}{Lecturer \& Strategic Consultant}{\href{http://ucu.edu.ua/eng/}{Ukrainian Catholic University}}{
@@ -192,13 +192,15 @@ Development of a Java3D applet for ventilation system configuration with a backe
 
 
 \section{Education}
-\ifphdeducation
-\eduentry{2013 -- 2017}{University of Lugano \& University of Bern}{Ph.D. in Informatics \textnormal{\emph{(ongoing)}}}{Thesis topic: ``Treating Code Quality as a First Class Entity''}
-\fi
+
+\eduentry{2013 -- 2017}{University of Lugano \& University of Bern}{Ph.D. in Informatics}{Thesis topic: ``Quality-Aware Tooling''}
+
 \eduentry{2012 -- 2013}{Ivan Franko National University of Lviv}{Master of Science}{Specialization in Informatics}
 \eduentry{2008 -- 2012}{Ivan Franko National University of Lviv}{Bachelor of Science}{Specialization in Informatics}
+\iffull
 \eduentry{2006 -- 2008}{Lviv Physics and Mathematics Lyceum}{Highschool diploma}{Specialization in Physics and Mathematics}
 \eduentry{2006 -- 2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{``Whimsical Bride'' - the graduation research project about statistics theory}
+\fi
 
 \section{Additional Training}
 \eduentry{2017}{CUSO Winter School}{\href{https://www.cuso.ch/activity/?p=2283\&uid=3307}{Design Science \& Design Thinking}}{}
