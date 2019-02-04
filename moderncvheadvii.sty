@@ -26,7 +26,7 @@
 \DeclareOption{right}   {\@leftfalse\@righttrue}
 
 \DeclareOption*{}% avoid choking on unknown options
-\ExecuteOptions{details}
+\ExecuteOptions{details, left}
 \ProcessOptions*\relax% \ProcessOptions* processes the options in the order provided (i.e., with the later ones possibly overriding the former ones), while \ProcessOptions processes them in the order of the package
 
 
@@ -44,13 +44,14 @@
 \renewcommand*{\namefont}{\Huge\bfseries\upshape}
 \renewcommand*{\titlefont}{\Huge\mdseries\upshape}
 \renewcommand*{\addressfont}{\normalsize\mdseries\upshape}
-\renewcommand*{\quotefont}{\large\slshape}
+\renewcommand*{\quotefont}{\slshape\rmfamily}
+
 
 % styles
 \renewcommand*{\namestyle}[1]{{\namefont\textcolor{color1}{#1}}}
 \renewcommand*{\titlestyle}[1]{{\titlefont\textcolor{color2!85}{#1}}}
 \renewcommand*{\addressstyle}[1]{{\addressfont\textcolor{color2}{#1}}}
-\renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{color1}{#1}}}
+\renewcommand*{\quotestyle}[1]{{\quotefont\textcolor{color0}{#1}}}
 
 % speach bubble
 \newcommand{\bubble}[1]{%
@@ -72,6 +73,7 @@
 
 % commands
 \@initializecommand{\makehead}{%
+  \vspace{-1cm}%
   \setlength{\makeheaddetailswidth}{\textwidth}%
   % name and title
   \recomputecvlengths%
@@ -107,7 +109,7 @@
 % lengths
 \@initializelength{\quotewidth}
 \renewcommand*{\recomputecvheadlengths}{%
-  \setlength{\quotewidth}{0.65\textwidth}}
+  \setlength{\quotewidth}{0.9\textwidth}}
 
 % commands
 \@initializecommand{\makeheaddetailssymbol}{%
@@ -131,7 +133,7 @@
     \savebox{\makeheaddetailsbox}{\usebox{\makeheaddetailstempbox}}%
     \@firstmakeheaddetailselementfalse%
   \else%
-    \flushmakeheaddetails\\\null% \null is required as there is no box on the line after \\, so glue such as \hfill (and leaders) disappear; this is in contrast to after \par, where the next line starts with an indent box (even after \noindent)
+    \flushmakeheaddetails\\%
     \savebox{\makeheaddetailsbox}{#2}%
     \savebox{\makeheaddetailstempbox}{#2}%
     \settowidth{\makeheaddetailsboxwidth}{\usebox{\makeheaddetailsbox}}%
@@ -148,13 +150,13 @@
   \recomputecvlengths%
   \makehead%
   % optional detailed information
-  \if@details{%
-    \\\null%
+  \centering\if@details{%
+    \\[0.2ex]%
     \addressfont\color{color2}%
     \ifthenelse{\isundefined{\@addressstreet}}{}{\addtomakeheaddetails{\addresssymbol\@addressstreet}%
       \ifthenelse{\equal{\@addresscity}{}}{}{\addtomakeheaddetails[~--~]{\@addresscity}}% if \addresstreet is defined, \addresscity and \addresscountry will always be defined but could be empty
       \ifthenelse{\equal{\@addresscountry}{}}{}{\addtomakeheaddetails[~--~]{\@addresscountry}}%
-        \flushmakeheaddetails\@firstmakeheaddetailselementtrue\\\null}%
+        \flushmakeheaddetails\@firstmakeheaddetailselementtrue\\[0.5ex]}%
     \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
       \addtomakeheaddetails{\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}}%
     \ifthenelse{\isundefined{\@email}}{}{\addtomakeheaddetails{\emailsymbol\emaillink{\@email}}}%
@@ -168,7 +170,7 @@
     {}%
     {{\\[1.25em]\null\hfill%
       \begin{minipage}{\quotewidth}%
-        \centering\quotestyle{\@quote}%
+        \flushleft\quotestyle{\@quote}%
       \end{minipage}\hfill\null}}\\[2.5em]%
   \par}% to avoid weird spacing bug at the first section if no blank line is left after \maketitle}
 

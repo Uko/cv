@@ -57,11 +57,7 @@
 
 % styles
 \renewcommand*{\sectionstyle}[1]{{%
-  \if@center\centering\else%
-  \if@right\raggedleft\fi\fi%
-  \sectionfont\textcolor{color1}{#1}%
-  \if@shortrules\else%
-    \par\fi}}
+  \raggedright\sectionfont\textcolor{color1}{#1}\par}}
 \renewcommand*{\subsectionstyle}[1]{{%
   \if@center\centering\else%
   \if@right\raggedleft\fi\fi%
@@ -100,7 +96,7 @@
   \setlength{\parskip}{0\p@}}
 
 \RenewDocumentCommand{\section}{sm}{%
-  \par\addvspace{2.5ex}%
+  \par\addvspace{2ex}%
   \phantomsection{}% reset the anchor for hyperrefs
   \addcontentsline{toc}{section}{#2}%
   \if@left\else\if@fullrules\else\if@mixedrules\else%
@@ -112,7 +108,7 @@
     \sectionrule%
   \else\if@right\else%
     \sectionrule\fi\fi\fi%
-  \par\nobreak\addvspace{1ex}\@afterheading}
+  \par\nobreak\addvspace{0ex}\@afterheading}
 
 \RenewDocumentCommand{\subsection}{sm}{%
   \par\addvspace{1ex}%
@@ -143,7 +139,7 @@
   \renewcommand*{\subsectionrule}{}\fi
 
 \renewcommand*{\cvitem}[3][.25em]{%
-  \ifthenelse{\equal{#2}{}}{}{\hintstyle{#2}: }{#3}%
+  \raggedright\ifthenelse{\equal{#2}{}}{}{\hintstyle{#2}: }{#3}%
   \par\addvspace{#1}}
 
 \renewcommand*{\cvdoubleitem}[5][.25em]{%
@@ -164,16 +160,15 @@
     {\listitemsymbol\begin{minipage}[t]{\listdoubleitemcolumnwidth}#3\end{minipage}}}}
 
 \renewcommand*{\cventry}[7][.25em]{
-  \begin{tabular*}{\maincolumnwidth}{l@{\extracolsep{\fill}}r}%
-    {\bfseries #4} & {\bfseries #5}\\%
-    {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\itshape #2}\\%
-  \end{tabular*}%
-  \ifx&#7&%
-  \else{\\%
-    \begin{minipage}{\maincolumnwidth}%
-      \small#7%
-    \end{minipage}}\fi%
-  \par\addvspace{#1}}
+  \begin{samepage}
+  	\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}%
+	  {\bfseries #4} & {\itshape #2} \\%
+	  {\itshape #3\ifthenelse{\equal{#6}{}}{}{, #6}} & {\bfseries #5}\\%
+  	\end{tabular*}%
+  	\ifx&#7&%
+      \else{\\\vbox{\small#7}}\fi%
+  	\par\addvspace{#1}
+  \end{samepage}}
 
 \@initializebox{\cvitemwithcommentmainbox}
 \@initializelength{\cvitemwithcommentmainlength}
