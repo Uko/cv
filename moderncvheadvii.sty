@@ -59,7 +59,7 @@
      colback=white,%
      colframe=color1,%
      sharp corners=southeast,%
-	 arc=2.2ex,%
+	 arc=2ex,%
 	 boxsep=0pt,%
 	 left=1.2em,%
 	 right=1.2em,%
@@ -74,7 +74,7 @@
 
 % commands
 \@initializecommand{\makehead}{%
-  \vspace*{-7ex}%
+  \vspace*{-6ex}%
   \setlength{\makeheaddetailswidth}{\textwidth}%
   % name and title
   \recomputecvlengths%
@@ -97,7 +97,7 @@
 	\vspace{3.5ex}%
 	\raggedright%
     \namestyle{\@firstname\ \@lastname}%
-    \ifthenelse{\equal{\@title}{}}{}{\\[1.25em]\titlestyle{\@title}}%
+    \ifthenelse{\equal{\@title}{}}{}{\\[1.1em]\titlestyle{\@title}}%
 	\vspace{0.05ex}%
   \end{minipage}%
   % optional photo
