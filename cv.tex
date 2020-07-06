@@ -7,12 +7,11 @@
 \moderncvstyle[left]{classicbank}
 \moderncvcolor{maroon}
 
-\newif\ifselectedpub
-\newif\iffull
+\newtoggle{selectedpub}
+\newtoggle{full}
 
-
-\selectedpubtrue 
-%\fulltrue
+\toggletrue{selectedpub}
+%\toggletrue{full}
 
 
 
@@ -66,7 +65,8 @@
 %\phone[fixed]{+41~(0)58~666~4293}                    % optional, remove / comment the line if not wanted
 \email{yuriy.tymchuk@swisscom.com}                               % optional, remove / comment the line if not wanted
 \homepage{yuriy.tymch.uk}                         % optional, remove / comment the line if not wanted
-\social[twitter]{yuriy\_tymchuk}   
+\social[twitter]{yuriy\_tymchuk}
+\social[github]{Uko}   
 %\extrainfo{}                 % optional, remove / comment the line if not wanted
 \photo[80pt][0pt]{picture_round}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
 %\quote{Some quote}                                 % optional, remove / comment the line if not wanted
@@ -161,16 +161,14 @@
 
 \makecvtitle
 
-\section{Achievements}
+\section{Public Achievements}
 
 \cvitem{\href{https://github.com/Uko/QualityAssistant}{QualityAssistant}}{My software-quality tool with a live feedback is integrated into the latest version of \href{http://pharo.org}{Pharo IDE}. Expected usage: 2000 developers; 30 commercial companies; 20 universities.}
 \cvitem{Live 3D visualizations video \textnormal{\href{https://youtu.be/CuimMwuZiGA}{[youtu.be/CuimMwuZiGA]}}}{was used in a couple of dozen presentations for demonstrating the idea of live programming.}
 \cvitem{\href{https://stackoverflow.com/users/982238/uko}{StackOverflow}}{Owner of \href{https://stackoverflow.com/help/badges/1829/pharo}{\sobadge{pharo-badge}} {\footnotesize (10 owners in total)} and \href{https://stackoverflow.com/help/badges/2904/smalltalk}{\sobadge{smalltalk-badge}} {\footnotesize (3 owners in total)} badges.}
-\cvitem{}{\textbf{I'm honest}, you may hate me for that.}
-
 
 \section{Employment}
-\jobentry{Dec 2017 -- ongoing}{Senior Big Data Engineer {\small (+ Scrum Master till Jul 2019)}}{\href{http://swisscom.ch}{Swisscom}}{Development of an ETL application, a client-facing web app, maintenance of a CI/DC infrastructure. Assistance on various data sourcing and analysis projects. Refactoring of a few systems. Reduced the deployment time from one human/day to a few minutes with minimum interactions. Saved a few dying features and operational failures. Won an internal startup-ish competition \emph{aka} Kickbox.}{\tech{Scala} \tech{Spark} \tech{NodeJS} \tech{Solr} \tech{SQL} \tech{Jenkins} \tech{Cloud Foundry} \tech{Python} \tech{Jupyter} \tpharo}
+\jobentry{Dec 2017 -- ongoing}{Senior Big Data Engineer {\small (+ Scrum Master till Jul 2019)}}{\href{http://swisscom.ch}{Swisscom}}{Development of an ETL application, a client-facing web app, maintenance of a CI/DC infrastructure. Assistance on various data sourcing and analysis projects. Refactoring of a few systems. Supervised a migration from AngularJS to Angular 7. Reduced the deployment time from one human/day to a few minutes with minimum interactions. Saved a few dying features and operational failures. Won an internal startup-ish competition \emph{aka} Kickbox.}{\tech{Scala} \tech{Spark} \tech{Solr} \tech{NodeJS} \tech{Angular} \tech{Ruby} \tech{Python} \tech{Jupyter} \tech{Jenkins} \tech{Cloud Foundry} \tpharo}
 \jobentry{Jan 2016 -- Nov 2017}{Research Assistant}{\href{http://www.unibe.ch}{Universit{\"a}t Bern}}{
 Research on embedding quality assistance into development workflow. Maintenance of the group's git server. I've invented a 3D visualization that allows detection of defects in software quality evolution. Teaching.}{\tpharo \tmoose \troassal \tech{Python} \tech{Ruby} \tech{Java} \tech{git}}
 \jobentry{Jun 2015 -- ongoing}{Lecturer \& Strategic Consultant}{\href{http://ucu.edu.ua/eng/}{Ukrainian Catholic University}}{
@@ -199,10 +197,10 @@ Development of a Java3D applet for ventilation system configuration with a backe
 
 \eduentry{2012 -- 2013}{Ivan Franko National University of Lviv}{Master of Science}{Specialization in Informatics}
 \eduentry{2008 -- 2012}{Ivan Franko National University of Lviv}{Bachelor of Science}{Specialization in Informatics}
-\iffull
-\eduentry{2006 -- 2008}{Lviv Physics and Mathematics Lyceum}{Highschool diploma}{Specialization in Physics and Mathematics}
-\eduentry{2006 -- 2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{``Whimsical Bride'' - the graduation research project about statistics theory}
-\fi
+\iftoggle{full}{
+	\eduentry{2006 -- 2008}{Lviv Physics and Mathematics Lyceum}{Highschool diploma}{Specialization in Physics and Mathematics}
+	\eduentry{2006 -- 2008}{Minor Academy of Sciences of Ukraine}{Member of MASU}{``Whimsical Bride'' - the graduation research project about statistics theory}
+}
 
 \section{Additional Training}
 \eduentry{2018}{Swisscom}{Application Security}{}
@@ -210,68 +208,77 @@ Development of a Java3D applet for ventilation system configuration with a backe
 \eduentry{2017}{CUSO Winter School}{\href{https://www.cuso.ch/activity/?p=2283\&uid=3307}{Design Science \& Design Thinking}}{}
 \eduentry{2016}{CUSO Seminar}{\href{https://www.cuso.ch/activity/?p=2283\&uid=3018}{Hands-on Data Analysis with R}}{}
 \eduentry{2016}{CUSO Winter School}{\href{https://www.cuso.ch/activity/?p=2283\&uid=3022}{Taming Big Data}}{}
-\iffull
-\eduentry{2014}{International Summer School on Software Eng.}{\href{http://www.sesa.unisa.it/seschool/previousEditions/2014/}{Search-Based Software Engineering}}{}
-\fi
+\iftoggle{full}{
+	\eduentry{2014}{International Summer School on Software Eng.}{\href{http://www.sesa.unisa.it/seschool/previousEditions/2014/}{Search-Based Software Engineering}}{}
+}
 
 \section{Personal Information}
 \cvdoubleitem{Date of Birth}{Aug 11, 1991}{Marital Status}{Married}
 \cvdoubleitem{Place of Birth}{Lviv, Ukraine}{\textnumero~of children}{2}
-\cvdoubleitem{Citizenship}{Ukrainian}{Swiss Residence Permit}{L}
+\cvdoubleitem{Citizenship}{Ukrainian}{Swiss Residence Permit}{B}
 
 \section{Languages}
 \cvdoubleitem{English}{Proficient}{Polish (spoken)}{Intermediate}
 \cvdoubleitem{Ukrainian}{Native Speaker}{Russian (spoken)}{Intermediate}
-\cvitem{Italian}{Basic}
+\cvdoubleitem{Italian}{Basic}{German}{Basic}
 
 
-\section{Latest Tools, Frameworks, and Libraries}
-
-\faArrowCircleORight \  Most of my project are available at my GitHub account \href{https://github.com/Uko}{[github.com/Uko]}
-
-\tool{https://github.com/Uko/GitHubcello}{GitHubcello}
-\tool{https://github.com/Uko/DeprecationAssistant}{DeprecationAssistant}
-\tool{https://github.com/Uko/MatchTool}{MatchTool}
-\tool{https://github.com/Uko/QualityAssistant}{QualityAssistant}
-\tool{http://yuriy.tymch.uk/Renraku/}{Renraku}
-\tool{http://yuriy.tymch.uk/Vidi}{ViDI}
-\tool{http://yuriy.tymch.uk/Smalldromeda}{Smalldromeda}                  
+%\section{Latest Tools, Frameworks, and Libraries}
+%
+%\faArrowCircleORight \  Most of my project are available at my GitHub account \href{https://github.com/Uko}{[github.com/Uko]}
+%
+%\tool{https://github.com/Uko/GitHubcello}{GitHubcello}
+%\tool{https://github.com/Uko/DeprecationAssistant}{DeprecationAssistant}
+%\tool{https://github.com/Uko/MatchTool}{MatchTool}
+%\tool{https://github.com/Uko/QualityAssistant}{QualityAssistant}
+%\tool{http://yuriy.tymch.uk/Renraku/}{Renraku}
+%\tool{http://yuriy.tymch.uk/Vidi}{ViDI}
+%\tool{http://yuriy.tymch.uk/Smalldromeda}{Smalldromeda}                  
 
 
 \nocite{*}
 
-\section{\ifselectedpub Selected \fi Publications}
+\section{\iftoggle{selectedpub}{Selected} Publications}
 
 \faArrowCircleORight \  Besides academic publishing I have a coding blog: \href{http://code.yuriy.tymch.uk}{[code.yuriy.tymch.uk]}
 
 
-\ifselectedpub
+\iftoggle{selectedpub}{
 	\vspace{-8pt}
 	\newrefcontext[sorting=ydnt]
 	\printbibliography[keyword=selected, heading=none]
-\else
+}{
 	\printbibsection{conferences}{conferences}
 	\printbibsection{formal demonstrations}{demo}
 	\printbibsection{doctoral symposium}{doc-symposium}
 	\printbibsection{workshops}{workshops}
 	\printbibsection{theses}{theses}  
-\fi
+}
 
 
 
 \section{Teaching}
 
 \teachentry{}{Lecturer}{Ukrainian Catholic University}{
+Software Architecture for Data Science in Python\hfill {\itshape Spring 2020}\\
 Advanced Programming\hfill {\itshape Fall 2016}}
 \teachentry{}{Teaching Assistant}{Universit{\"a}t Bern}{
 Compiler Construction\hfill {\itshape Spring 2017}\\
 Software Modeling and Analysis\hfill {\itshape Fall 2016}}
-\teachentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
-Bachelors Project\hfill {\itshape Spring 2015}\\
-Programming Fundamentals I\hfill {\itshape Fall 2014, Fall 2015}\\
-Software Atelier IV\hfill {\itshape Spring 2014}}
+\iftoggle{full}{
+	\teachentry{}{Teaching Assistant}{Universit\`a della Svizzera Italiana}{
+	Bachelors Project\hfill {\itshape Spring 2015}\\
+	Programming Fundamentals I\hfill {\itshape Fall 2014, Fall 2015}\\
+	Software Atelier IV\hfill {\itshape Spring 2014}}
+}{
+	\teachentry{}{Mentor}{Google Summer of Code}{
+	\href{https://summerofcode.withgoogle.com/archive/2019/projects/4794529150926848/}{New Collections for Pharo}\hfill {\itshape  2019}\\
+	\href{https://summerofcode.withgoogle.com/archive/2017/projects/6133050358366208/}{Advancing in Pharo Code Quality Support}\hfill {\itshape 2017}\\
+	\href{http://gsoc2013.esug.org/projects/fast-java}{FAST Java Model}\hfill {\itshape 2013}}
+}
 
 
+\iftoggle{full}{
 \section{Conference Assistance}
 \serviceentry{}{[IWST] International Workshop on Smalltalk Technologies}{
 Program Committee \hfill {\itshape 2017}}
@@ -280,14 +287,14 @@ Program Committee - NIER and Tool Demo Track \hfill {\itshape 2016 -- 2018}\\
 Program Committee - Artifact Track      \hfill {\itshape 2015}}
 \serviceentry{}{[GSoC] Google Summer of Code}{
 Pharo Consortium Organization Admin and Student's Mentor \hfill {\itshape 2017, 2019}\\
-European Smalltalk Users Group Student's Mentor         \hfill {\itshape 2015}}
-
+European Smalltalk Users Group Student's Mentor         \hfill {\itshape 2013}}
+}
 
 
 
 
 \section{Hobby}
-Hiking picturesque or difficult mountains and reflecting amazing moments of this world with my camera (\url{https://500px.com/yuriy_tymchuk}). I own a 3D printer, and I design functional models that I print afterwords. Some time ago I was doing Kyokushinkai karate and I'm still following some of the principals I've learned there.
+Hiking picturesque or difficult mountains and reflecting amazing moments of this world with my camera (\url{https://500px.com/yuriy_tymchuk}). I own a 3D printer, and I design functional models that I print afterwards (\url{https://terpuh-labs.com}). Some time ago I was doing Kyokushinkai karate and I'm still following some of the principals I've learned there.
 
 \section{Remarks for Nerds}
 This cv is written in \LaTeX, versioned with git, hosted on \href{https://github.com/Uko/cv}{GitHub} and built with \href{https://travis-ci.org/Uko/cv}{Travis CI}
